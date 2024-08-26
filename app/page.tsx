@@ -19,7 +19,7 @@ export default function Home() {
           {/* <p className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
             Gradients X Animations
           </p> */}
-          <Image src='/descope-logo.png' alt='Descope logo' width={150} height={200} />
+          <Image src='/descope-logo.svg' alt='Descope logo' width={250} height={200} />
           {/* {isSessionLoading ? null : <Message isAuthenticated={isAuthenticated} />} */}
           <Message isAuthenticated={isAuthenticated} />
         </div>
@@ -28,19 +28,21 @@ export default function Home() {
   );
 }
 
-function Message( { isAuthenticated } : { isAuthenticated: boolean }) {
+function Message({ isAuthenticated }: { isAuthenticated: boolean }) {
   if (isAuthenticated) {
-    return <Card className="backdrop-blur-sm bg-white/20 p-4 space-y-3 max-w-sm mt-8">
-      <h1 className="text-white text-xl font-bold">You&apos;re authenticated!</h1>
-      <p className="text-white text-sm font-normal">You&apos;ve just experienced Descope&apos;s &quot;One Tap&quot; Login. Feel free to log out and try it again.</p>
+    return <Card className="backdrop-blur-sm bg-white/20 p-4 space-y-3 max-w-md mt-8">
+      <h1 className="text-white text-3xl font-bold">You&apos;re authenticated!</h1>
+      <p className="text-white text-base font-normal">You&apos;ve just experienced Descope&apos;s &quot;One Tap&quot; Login. Feel free to log out and try it again.</p>
       <LogoutButton />
     </Card>
   }
-  return <Card className="backdrop-blur-sm bg-white/20 p-4 space-y-4 max-w-md mt-8">
-    <h1 className="text-white text-xl font-bold">Experience Google &quot;One Tap&quot; Login</h1>
-    <h3 className="text-gray-200 text-sm font-normal">Log in like magic! Look at the top-right corner of your screen.</h3>
-    <p className="text-gray-200 text-sm font-normal">Not seeing the &quot;One Tap&quot; Login popup? You
-      might be on an unsupported browser. Check out the list <Link className="text-gray-300 underline hover:text-gray-100 transition-colors" target='_blank' href='https://developers.google.com/identity/gsi/web/guides/supported-browsers'>here</Link>.
-    </p>
+  return <Card className="backdrop-blur-sm bg-white/20 px-2 py-6 space-y-4 max-w-2xl mt-8">
+    <h1 className="text-white text-3xl font-bold">Experience Google &quot;One Tap&quot; Login</h1>
+    <div className="space-y-4">
+      <h3 className="text-gray-200 text-lg font-normal">Log in with a single click! Look at the top-right corner of your screen.</h3>
+      <p className="text-gray-200 text-lg font-normal">Not seeing the &quot;One Tap&quot; Login popup? You
+        might be on an unsupported browser. Check out the list <Link className="text-gray-300 underline hover:text-gray-100 transition-colors" target='_blank' href='https://developers.google.com/identity/gsi/web/guides/supported-browsers'>here</Link>.
+      </p>
+    </div>
   </Card>
 }

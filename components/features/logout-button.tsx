@@ -6,5 +6,5 @@ import { Button } from "../ui/button";
 export default function LogoutButton() {
     const { logout } = useDescope();
 
-    return <Button onClick={async () => await logout()}>Logout</Button>;
+    return <Button variant="secondary" onClick={async () => await logout()}>Logout</Button>;
 }
