@@ -6,7 +6,7 @@ import { AuthProvider } from "@descope/nextjs-sdk";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Descope One Tap Demo",
+  title: "onetap.guru | Descope One Tap Demo",
   description: "Experience how adding Google One Tap to your app can give your users a semaless, secure login experience.",
 };
 
