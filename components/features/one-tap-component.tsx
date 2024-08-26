@@ -7,7 +7,6 @@ import { useEffect } from "react";
 let oneTapInitialized = false;
 
 const OneTapComp = () => {
-    const router = useRouter();
     const oneTap = true;
     const sdk = useDescope();
     const { isAuthenticated, isSessionLoading } = useSession();
@@ -17,12 +16,9 @@ const OneTapComp = () => {
         if (oneTapInitialized) return;
 
         const res: any = await sdk.fedcm.oneTap('google-implicit');
-        if (res) {
-            // navigate to /welcome page
-            router.push('/welcome');
-        }
         oneTapInitialized = true;
     };
+    
     useEffect(() => {
         if (oneTap && !isAuthenticated && !isSessionLoading) {
             startOneTap();
