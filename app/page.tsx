@@ -30,8 +30,9 @@ export default function Home() {
 
 function Message( { isAuthenticated } : { isAuthenticated: boolean }) {
   if (isAuthenticated) {
-    return <Card className="backdrop-blur-sm bg-white/20 p-4 space-y-4 max-w-md mt-8">
-      <h1 className="text-white text-xl font-bold">Welcome back!</h1>
+    return <Card className="backdrop-blur-sm bg-white/20 p-4 space-y-4 max-w-sm mt-8">
+      <h1 className="text-white text-xl font-bold">You&apos;re logged in!</h1>
+      <p className="text-white text-sm font-normal">You&apos;ve just experienced Descope&apos;s &quot;One Tap&quot; Login. Feel free to log out and try it again.</p>
       <LogoutButton />
     </Card>
   }
