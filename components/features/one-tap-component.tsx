@@ -15,7 +15,6 @@ const OneTapComp = () => {
         if (oneTapInitialized) return;
 
         const res: any = await sdk.fedcm.oneTap('google-implicit');
-        console.log("Response: ", res.data);
         oneTapInitialized = true;
     };
     useEffect(() => {

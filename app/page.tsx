@@ -1,10 +1,15 @@
+'use client'
+
+import LogoutButton from "@/components/features/logout-button";
 import OneTapComp from "@/components/features/one-tap-component";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import { Card } from "@/components/ui/card";
+import { useSession } from "@descope/nextjs-sdk/client";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
+  const { isAuthenticated, isSessionLoading } = useSession();
 
   return (
     <main className="bg-gray-800">
@@ -15,14 +20,20 @@ export default function Home() {
             Gradients X Animations
           </p> */}
           <Image src='/descope-logo.png' alt='Descope logo' width={200} height={200} />
-          <Message />
+          {isSessionLoading ? <p>Loading...</p> : <Message isAuthenticated={isAuthenticated} />}
         </div>
       </BackgroundGradientAnimation>
     </main>
   );
 }
 
-function Message() {
+function Message( { isAuthenticated } : { isAuthenticated: boolean }) {
+  if (isAuthenticated) {
+    return <Card>
+      <h1 className="">Welcome back!</h1>
+      <LogoutButton />
+    </Card>
+  }
   return <Card>
     <h1 className="">Experience Google &quot;One Tap&quot; Login</h1>
     <h3>Log in like magic! Look at the top-right corner of your screen.</h3>
