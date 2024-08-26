@@ -9,6 +9,7 @@ let oneTapInitialized = false;
 const OneTapComp = () => {
     const oneTap = true;
     const sdk = useDescope();
+    const router = useRouter();
     const { isAuthenticated, isSessionLoading } = useSession();
 
     const startOneTap = async () => {
@@ -16,6 +17,7 @@ const OneTapComp = () => {
         if (oneTapInitialized) return;
 
         const res: any = await sdk.fedcm.oneTap('google-implicit');
+        router.refresh();
         oneTapInitialized = true;
     };
     
