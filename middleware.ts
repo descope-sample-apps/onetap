@@ -12,6 +12,8 @@ export default authMiddleware({
 
 	// These are the public and private routes in your app. Read more about how to use these below.
 	publicRoutes: ["/"],
+    privateRoutes: ["/welcome"],
+    redirectUrl: "/",
 	// If you having privateRoutes and publicRoutes defined at the same time, privateRoutes will be ignored.
 })
 
