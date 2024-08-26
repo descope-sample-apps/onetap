@@ -19,8 +19,9 @@ export default function Home() {
           {/* <p className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
             Gradients X Animations
           </p> */}
-          <Image src='/descope-logo.png' alt='Descope logo' width={200} height={200} />
-          {isSessionLoading ? <p>Loading...</p> : <Message isAuthenticated={isAuthenticated} />}
+          <Image src='/descope-logo.png' alt='Descope logo' width={150} height={200} />
+          {/* {isSessionLoading ? null : <Message isAuthenticated={isAuthenticated} />} */}
+          <Message isAuthenticated={isAuthenticated} />
         </div>
       </BackgroundGradientAnimation>
     </main>
@@ -29,16 +30,16 @@ export default function Home() {
 
 function Message( { isAuthenticated } : { isAuthenticated: boolean }) {
   if (isAuthenticated) {
-    return <Card>
-      <h1 className="">Welcome back!</h1>
+    return <Card className="backdrop-blur-sm bg-white/20 p-4 space-y-4 max-w-md mt-8">
+      <h1 className="text-white text-xl font-bold">Welcome back!</h1>
       <LogoutButton />
     </Card>
   }
-  return <Card>
-    <h1 className="">Experience Google &quot;One Tap&quot; Login</h1>
-    <h3>Log in like magic! Look at the top-right corner of your screen.</h3>
-    <p>Not seeing the &quot;One Tap&quot; Login popup? You
-      might be on an unsupported browser. Check list <Link target='_blank' href='https://developers.google.com/identity/gsi/web/guides/supported-browsers'>here</Link>.
+  return <Card className="backdrop-blur-sm bg-white/20 p-4 space-y-4 max-w-md mt-8">
+    <h1 className="text-gray-100 text-xl font-bold">Experience Google &quot;One Tap&quot; Login</h1>
+    <h3 className="text-gray-300 text-sm font-normal">Log in like magic! Look at the top-right corner of your screen.</h3>
+    <p className="text-gray-300 text-sm font-normal">Not seeing the &quot;One Tap&quot; Login popup? You
+      might be on an unsupported browser. Check out the list <Link className="text-gray-300 underline hover:text-gray-100 transition-colors" target='_blank' href='https://developers.google.com/identity/gsi/web/guides/supported-browsers'>here</Link>.
     </p>
   </Card>
 }
