@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="bg-[#18283F]">
+    <>
       <OneTapComp />
       <BackgroundGradientAnimation>
         <div className="absolute z-50 inset-0 flex flex-col items-center justify-center text-white font-bold px-4 text-3xl text-center">
@@ -15,6 +15,6 @@ export default function Home() {
           <Message isAuthenticated={false} />
         </div>
       </BackgroundGradientAnimation>
-    </main>
+    </>
   );
 }
