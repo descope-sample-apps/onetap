@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@descope/nextjs-sdk";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,8 @@ export default function RootLayout({
   return (
     <AuthProvider projectId={process.env.NEXT_PUBLIC_DESCOPE_PROJECT_ID!}>
       <html lang="en">
-        <body className={inter.className}>
-          <main className="bg-[#18283F]">{children}</main>
+        <body className={cn(inter.className, "bg-[#18283F]")}>
+          {children}
         </body>
       </html>
     </AuthProvider>
