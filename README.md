@@ -23,12 +23,13 @@ npm install
 
 ```
 NEXT_PUBLIC_DESCOPE_PROJECT_ID="YOUR_DESCOPE_PROJECT_ID" // Required
-
 ```
 
-Use .env.example and rename to .env after adding the environment variables.
+Use `.env.example` and rename to `.env.local` after adding the environment variables.
 
 > **_NOTE:_** NEXT_PUBLIC_DESCOPE_PROJECT_ID is your Descope Project ID which you can find under [Project Settings](https://app.descope.com/settings/project), in the console.
+
+4. Set up a Google One Tap specific Custom Provider in the Descope console (Dashboard -> Authentication Methods -> Social Login -> + Custom Provider) and name it `google-implicit`.
 
 ## Running the Application 
 
