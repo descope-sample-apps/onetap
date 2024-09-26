@@ -16,7 +16,7 @@ const OneTapComp = () => {
         // eslint-disable-next-line
         if (oneTapInitialized) return;
 
-        const res: any = await sdk.fedcm.oneTap('google-implicit');
+        const res: any = await sdk.fedcm.oneTap('google');
         router.refresh();
         oneTapInitialized = true;
     };
