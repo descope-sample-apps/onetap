@@ -16,11 +16,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Star } from "lucide-react";
+import { Computer, Phone, Star } from "lucide-react";
 
 const onetapHelperCards = [
   {
-    title: "Reduce SMS costs",
+    title: "Frictionless UX",
+    icon: <Computer />
+  },
+  {
+    title: "Improve conversion",
     icon: <Star />
   },
   {
@@ -28,12 +32,8 @@ const onetapHelperCards = [
     icon: <Star />
   },
   {
-    title: "Reduce SMS costs",
-    icon: <Star />
-  },
-  {
-    title: "Reduce SMS costs",
-    icon: <Star />
+    title: "Eliminate security gaps",
+    icon: <Phone />
   }
 ]
 
@@ -44,12 +44,12 @@ export default function Home() {
     <>
       <OneTapComp />
       <BackgroundGradientAnimation>
-        <div className="max-w-xl mx-auto text-center py-12 relative z-50">
+        <div className="max-w-xl my-auto mx-auto px-4 h-full py-36 text-center py-12 relative z-50">
           <Image src='/descope-logo.svg' alt='Descope logo' width={250} height={200} className="mx-auto" />
           <Message isAuthenticated={currSession ? true : false} />
         </div>
       </BackgroundGradientAnimation>
-      <div className="bg-white py-12">
+      <div className="bg-white py-12 px-4">
         <div className="max-w-xl mx-auto space-y-4">
           <h2 className="mt-10 scroll-m-20 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
             What is Google One Tap?
@@ -64,7 +64,7 @@ export default function Home() {
         </div>
       </div>
       <BackgroundGradientAnimation>
-        <div className="max-w-xl mx-auto py-12 space-y-6 text-center">
+        <div className="max-w-xl mx-auto py-12 space-y-6 text-center px-4">
           <h2 className="mt-10 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 text-white">
             How Google One Tap helps
           </h2>
@@ -94,7 +94,7 @@ function CustomCard({ title, icon }: { title: string, icon: React.ReactNode }) {
     <Card>
       <CardHeader>
         {icon}
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="text-left text-md font-normal">{title}</CardTitle>
       </CardHeader>
     </Card>
   )
