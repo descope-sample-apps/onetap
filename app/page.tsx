@@ -89,7 +89,7 @@ export default function Home() {
 
 
 
-export function CustomCard({ title, icon }: { title: string, icon: React.ReactNode }) {
+function CustomCard({ title, icon }: { title: string, icon: React.ReactNode }) {
   return (
     <Card>
       <CardHeader>
