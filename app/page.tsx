@@ -14,7 +14,7 @@ export default function Home() {
       <BackgroundGradientAnimation>
         <div className="absolute z-50 inset-0 flex flex-col items-center justify-center text-white font-bold px-4 text-3xl text-center">
           <Image src='/descope-logo.svg' alt='Descope logo' width={250} height={200} />
-          <Message isAuthenticated={currSession ? true : false} />
+          <Message session={currSession} />
         </div>
       </BackgroundGradientAnimation>
     </>
