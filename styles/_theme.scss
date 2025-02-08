@@ -1,0 +1,127 @@
+@use 'sass:map';
+
+$themes: (
+	light: (
+		surface-surface-background: $grey-25,
+		text-text-primary: $grey-950,
+		text-text-muted: $grey-500,
+		text-text-accent: $accents-blue-600,
+		card-surface-card-surface-default: $grey-0,
+		card-border-card-border-default: $grey-100,
+		card-border-card-border-hover: $accents-blue-600,
+		button-surface-primary-button-surface-primary-inactive: $grey-100,
+		button-surface-secondary-button-surface-secondary-default: $grey-0,
+		button-surface-secondary-button-surface-secondary-hover: $grey-50,
+		button-surface-secondary-button-surface-secondary-inactive: $grey-50,
+		button-border-secondary-button-border-secondary-default: $grey-100,
+		button-border-secondary-button-border-secondary-hover: $grey-200,
+		button-border-secondary-button-border-secondary-inactive: $grey-100,
+		button-text-secondary-button-text-secondary-default: $grey-950,
+		button-text-secondary-button-text-secondary-inactive: $grey-300,
+		icon-icon-light-grey: $grey-500,
+		button-text-tertiary-tertiary-default: $grey-950,
+		button-text-tertiary-tertiary-hover: $accents-blue-600,
+		button-text-tertiary-tertiary-inactive: $grey-300,
+		icon-icon-blue: $accents-blue-600,
+		icon-primary: $grey-950,
+		surface-surface-dark-blue: $grey-50,
+		input-surface-input-surface-default: $grey-25,
+		input-border-input-border-default: $grey-50,
+		input-border-input-border-hover: $accents-blue-600,
+		input-border-input-border-focus: #dfe7fb,
+		input-surface-input-surface-hover: $grey-0,
+		input-surface-input-surface-inactive: $grey-0,
+		text-text-inactive: $grey-300,
+		icon-icon-cyan: $accents-cyan-500,
+		text-highlight-color: $accents-blue-600,
+		red: #b50808,
+		red-light: #fff0f0
+	),
+	dark: (
+		surface-surface-background: $grey-950,
+		text-text-primary: $grey-0,
+		text-text-muted: $grey-200,
+		text-text-accent: $accents-cyan-500,
+		card-surface-card-surface-default: $grey-opacity,
+		card-border-card-border-default: $grey-800,
+		card-border-card-border-hover: $accents-cyan-500,
+		button-surface-primary-button-surface-primary-inactive: $grey-100,
+		button-surface-secondary-button-surface-secondary-default: $accents-blue-800,
+		button-surface-secondary-button-surface-secondary-hover: $accents-blue-700,
+		button-surface-secondary-button-surface-secondary-inactive:
+			$accents-blue-900,
+		button-border-secondary-button-border-secondary-default: $accents-blue-700,
+		button-border-secondary-button-border-secondary-hover: $accents-blue-800,
+		button-border-secondary-button-border-secondary-inactive: $accents-blue-800,
+		button-text-secondary-button-text-secondary-default: $grey-0,
+		button-text-secondary-button-text-secondary-inactive: $grey-300,
+		icon-icon-light-grey: $grey-50,
+		button-text-tertiary-tertiary-default: $grey-0,
+		button-text-tertiary-tertiary-hover: $accents-blue-500,
+		button-text-tertiary-tertiary-inactive: $grey-400,
+		icon-icon-blue: $accents-blue-500,
+		icon-primary: $grey-0,
+		surface-surface-dark-blue: $accents-blue-900,
+		input-surface-input-surface-default: $accents-blue-900,
+		input-border-input-border-default: $grey-800,
+		input-border-input-border-hover: $accents-blue-500,
+		input-border-input-border-focus: #0c1935,
+		input-surface-input-surface-hover: $accents-blue-900,
+		input-surface-input-surface-inactive: $grey-950,
+		text-text-inactive: $grey-500,
+		icon-icon-cyan: $accents-cyan-300,
+		text-highlight-color: $grey-0,
+		red: #e34242,
+		red-light: #2c0f0f
+	)
+);
+
+$theme-map: null;
+
+// to be used in module files like: component/component.module.scss
+@mixin theme() {
+	@each $theme, $map in $themes {
+		$theme-map: $map !global;
+
+		@if $theme == 'light' {
+			@content;
+		}
+
+		:global(.#{$theme}) & {
+			@content;
+		}
+	}
+	$theme-map: null !global;
+}
+
+// to be used in global files like: styles/_typography.scss
+@mixin g_theme() {
+	@each $theme, $map in $themes {
+		$theme-map: $map !global;
+
+		@if $theme == 'light' {
+			@content;
+		}
+
+		.#{$theme} & {
+			@content;
+		}
+	}
+	$theme-map: null !global;
+}
+
+// function to get proper color depending on the acive theme
+// must be used inside the theme or g_theme mixins
+// usage:
+/* file:my-section.module.scss
+
+	.section {
+		@include theme {
+			color: theme-get(my-text-color);
+		}
+	}
+
+*/
+@function theme-get($key) {
+	@return map.get($theme-map, $key);
+}

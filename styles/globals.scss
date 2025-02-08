@@ -1,0 +1,540 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	font-size: $html-font-size;
+	font-family: var(--font-primary);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	scroll-padding-top: rem-convert(calc(56px + 14px));
+
+	@include g_theme {
+		color: theme-get(text-text-primary);
+		background-color: theme-get(surface-surface-background);
+	}
+
+	@include media(sm) {
+		scroll-padding-top: rem-convert(calc(83px + 17px));
+	}
+}
+
+* {
+	box-sizing: border-box;
+	color: inherit;
+	margin: 0;
+	scroll-behavior: smooth;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+main {
+	background-image: radial-gradient(circle, #cfddf84d 2px, transparent 2px);
+	background-size: 30px 30px;
+	background-repeat: repeat;
+}
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+	display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio,
+canvas,
+video {
+	display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+	display: none;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+	background: transparent;
+	text-decoration: none;
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	outline: none;
+}
+
+button,
+a {
+	transition: outline $animation-duration $animation-function;
+	outline-offset: rem-convert(2px);
+
+	&:focus-visible {
+		outline-style: solid;
+		outline-color: $button-border-primary-button-border-primary-focus;
+		outline-width: rem-convert(2px);
+	}
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong {
+	font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+	font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, serif;
+	font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+	white-space: pre-wrap;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+	font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+	border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+	overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+	margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.63em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+	border: 0;
+	padding: 0;
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	margin: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+	line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+	text-transform: none;
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+	cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type='checkbox'],
+input[type='radio'] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type='search'] {
+	appearance: textfield;
+	box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+	appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+	overflow: auto;
+
+	/* 1 */
+	vertical-align: top;
+
+	/* 2 */
+}
+
+code {
+	font-family: var(--font-code);
+}
+
+.visually-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.osano-cm-window__widget.osano-cm-widget {
+	display: none !important;
+	min-height: 0 !important;
+}
+
+.osano-cm-info-dialog__info:not(.osano-cm-info--open) {
+	visibility: hidden;
+	transform: translate(-100%);
+}
+
+.osano-cm-dialog.osano-cm-dialog--hidden {
+	visibility: hidden;
+	transition-delay: 0ms;
+	transition-duration: 0ms;
+}
+
+.yt-lite {
+	background: #121217;
+	max-width: 100%;
+	position: relative;
+	display: block;
+	contain: content;
+	background-position: center center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: rem-convert(5px);
+	margin-top: rem-convert(31px);
+	outline-width: rem-convert(7px);
+	outline-color: rgba(255, 255, 255, 0.15);
+	outline-style: solid;
+
+	@include media(sm) {
+		outline-width: rem-convert(12px);
+		border-radius: rem-convert(8px);
+		width: rem-convert(560px);
+		height: rem-convert(315px);
+		margin-top: rem-convert(55px);
+	}
+
+	@include mediaMax(sm) {
+		width: 100%;
+		aspect-ratio: 1.87/1;
+	}
+}
+
+/* gradient */
+.yt-lite::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==);
+	background-position: top;
+	background-repeat: repeat-x;
+	height: 60px;
+	padding-bottom: 50px;
+	width: 100%;
+	transition: all $animation-duration $animation-function;
+}
+
+/* responsive iframe with a 16:9 aspect ratio
+	thanks https://css-tricks.com/responsive-iframes/
+*/
+.yt-lite::after {
+	content: '';
+	display: block;
+	padding-bottom: calc(100% / (16 / 9));
+}
+.yt-lite > iframe {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* play button */
+.yt-lite > .lty-playbtn {
+	position: absolute;
+	inset: 0;
+	transition: border-color $animation-duration $animation-function;
+	border: 4px solid transparent;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%, -50%, 0);
+		background-image: url('../public/icons/play-button.svg');
+		background-size: 64px 64px;
+		width: 64px;
+		height: 64px;
+	}
+
+	&:focus {
+		border-color: $button-border-primary-button-border-primary-focus;
+	}
+}
+
+/* Post-click styles */
+.yt-lite.lyt-activated {
+	cursor: unset;
+}
+.yt-lite.lyt-activated::before,
+.yt-lite.lyt-activated > .lty-playbtn {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+.edges-mask {
+	mask: linear-gradient(
+		to right,
+		transparent 0%,
+		black 10%,
+		black 90%,
+		transparent 100%
+	);
+}
+
+.pointer-events-none {
+	pointer-events: none;
+}
+
+.main-container-blur {
+	backdrop-filter: blur(16px) saturate(180%);
+	position: fixed;
+	left: 0;
+	top: rem-convert(118px);
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 9;
+	opacity: 0;
+	background-color: rgba(10, 11, 12, 0.6);
+	transition-property: opacity;
+	transition-duration: $animation-duration;
+	transition-timing-function: $animation-function;
+	transform: translateZ(0);
+
+	&.visible {
+		opacity: 1;
+	}
+
+	&.isScrolled {
+		top: rem-convert(70px);
+	}
+}
+
+a.skip-button {
+	position: absolute;
+	left: 50%;
+	top: -16rem;
+	transform: translateX(-50%);
+	transition: top 400ms ease-in;
+	z-index: 99;
+}
+
+a.skip-button:focus-within,
+a.skip-button:focus {
+	left: 50%;
+	top: 1rem;
+	transform: translateX(-50%);
+}

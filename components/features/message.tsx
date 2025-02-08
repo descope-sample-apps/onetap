@@ -6,7 +6,7 @@ import { AuthenticationInfo } from "./descope-types";
 
 
 export default function Message({ session }: { session: AuthenticationInfo | undefined }) {
-  return <CardContainer className="backdrop-blur-sm bg-white/20 px-4 sm:px-8 py-8 space-y-3 max-w-2xl rounded-xl flex flex-col border border-white/70">
+  return <CardContainer className="backdrop-blur-sm bg-white/20 px-4 sm:px-8 py-4 space-y-3 max-w-2xl rounded-xl flex flex-col border border-white/70">
     {session ? <div className="space-y-4">
       <h1 className="text-white text-3xl font-bold">
         {`Welcome${session.token.givenName ? `, ${session.token.givenName}` : ""}!`}
