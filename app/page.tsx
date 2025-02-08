@@ -32,7 +32,8 @@ export default function Home() {
                   </h1>
                   <div className="space-y-4">
                     <h3 className="text-[#686e78] text-left text-lg font-normal">Google One Tap is a sign-in feature that allows users to log into websites or apps with just one click without remembering or entering passwords.
-                      This feature can be embedded into websites and apps, offering a seamless, fast login experience that reduces user friction. It's designed to improve user convenience and security by eliminating the need for repeated credential entry.
+                      This feature can be embedded into websites and apps, offering a seamless, fast login experience that reduces user friction. It&apos;s
+                      designed to improve user convenience and security by eliminating the need for repeated credential entry.
                       Additionally, it helps businesses increase user sign-ups and engagement by minimizing barriers to entry.
                     </h3>
                   </div>
