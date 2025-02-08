@@ -24,7 +24,7 @@ export default function Home() {
 
           <div className="relative z-20 w-screen left-0">
             <SectionDivider />
-            <SectionWrapper order={0} theme="light" className="w-screen left-0 relative z-30">
+            <SectionWrapper order={0} className="w-screen left-0 relative z-30">
               <div className="h-[300px] grid place-items-center">
                 <div className="space-y-4 max-w-2xl mx-auto">
                   <h1 className="text-[#192740] text-4xl text-center font-bold flex items-center justify-center gap-2">
