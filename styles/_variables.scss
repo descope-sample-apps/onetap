@@ -1,0 +1,87 @@
+// ~~~~~~~~~~~~~ Colors ~~~~~~~~~~~~~
+$white: #ffffff;
+$off-white: #ededf5;
+$deep-blue: #0082b5;
+
+$link: $deep-blue;
+
+$red: #ed404a;
+$cyan: #0ed7d1;
+$cyan-bright: #0ed8d2;
+$dark-green: #65ca29;
+$deep-green: #65cc29;
+
+$text-primary: $white;
+$text-secondary: $cyan;
+
+// ~~~~~~~ REFRESH DESIGN COLORS ~~~~~~~
+$animation-duration: 400ms;
+$animation-function: cubic-bezier(0.59, 0, 0.06, 1);
+
+$grey-0: #ffffff;
+$grey-25: #f9fafb;
+$grey-50: #f0f0f1;
+$grey-100: #dadee5;
+$grey-200: #c3c5c9;
+$grey-300: #a4a8ae;
+$grey-400: #868b93;
+$grey-500: #686e78;
+$grey-800: #2a2d33;
+$grey-950: #0a101a;
+$grey-950-opacity: rgba(10, 16, 26, 0.85);
+$grey-opacity: rgba(12, 19, 31, 0.5);
+
+$accents-cyan-300: #9dfafa;
+$accents-cyan-500: #7deded;
+
+$accents-blue-100: #dadee5;
+$accents-blue-500: #0085ff;
+$accents-blue-600: #0085ff;
+$accents-blue-700: #334665;
+$accents-blue-800: #253754;
+$accents-blue-900: #111e32;
+
+$orange: #c94900;
+$green: #0ad012;
+
+$button-surface-primary-button-surface-primary-default: $accents-cyan-500;
+$button-surface-primary-button-surface-primary-hover: $accents-cyan-300;
+$button-border-primary-button-border-primary-default: $accents-cyan-300;
+$button-border-primary-button-border-primary-hover: $accents-cyan-300;
+$button-border-primary-button-border-primary-focus: $accents-blue-500;
+$button-border-secondary-button-border-secondary-focus: $accents-blue-500;
+$button-text-primary-button-text-primary-default: $grey-950;
+$button-text-primary-button-text-primary-inactive: $grey-400;
+$icon-icon-black: $grey-950;
+$icon-icon-blue: $accents-blue-500;
+$icon-icon-dark-grey: $grey-200;
+$icon-icon-white: $grey-0;
+$icon-icon-inactive: $grey-400;
+$shadow-light-card:
+	0px 12px 12px -6px rgba(14, 63, 126, 0.04),
+	0px 0px 0px 1px rgba(14, 63, 126, 0.04),
+	0px 6px 6px -3px rgba(42, 51, 69, 0.04),
+	0px 3px 3px -1.5px rgba(42, 51, 69, 0.04),
+	0px 1px 1px -0.5px rgba(42, 51, 69, 0.04);
+
+$primitive-red: #e34242;
+$primitive-orange: #c94900;
+// ~~~~~~~ REFRESH DESIGN COLORS END ~~~~~~~
+
+$passwordle-green: #70f02e;
+$passwordle-yellow: #141412;
+
+$primary-10: #c8c8cd;
+$primary-20: #c6c6cb;
+$primary-30: #8b8b98;
+$primary-35: #707070;
+$primary-40: #646469;
+$primary-60: #404051;
+$primary-70: #2f2f3c;
+$primary-80: #1c1c23;
+$primary-100: #121217;
+$primary-110: #0d0d11;
+$primary-120: #0e0e11;
+
+$surface-background-light: $grey-25;
+$surface-background-dark: $grey-950;

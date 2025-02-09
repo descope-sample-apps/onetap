@@ -1,0 +1,26 @@
+@use 'sass:map';
+
+// Breakpoints
+$breakpoints: (
+	xs: rem-convert(375px),
+	sm: rem-convert(768px),
+	sm-md: rem-convert(834px),
+	md: rem-convert(992px),
+	lg: rem-convert(1200px),
+	xl: rem-convert(1366px),
+	xxl: rem-convert(1500px),
+	xxxl: rem-convert(1920px),
+	xxxxl: rem-convert(2100px)
+);
+
+@mixin media($device) {
+	@media only screen and (min-width: #{map.get($breakpoints, $device)}) {
+		@content;
+	}
+}
+
+@mixin mediaMax($device) {
+	@media only screen and (max-width: #{map.get($breakpoints, $device)}) {
+		@content;
+	}
+}

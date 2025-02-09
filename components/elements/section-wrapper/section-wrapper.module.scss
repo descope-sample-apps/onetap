@@ -1,0 +1,60 @@
+@import '@/styles/variables.scss';
+@import '@/styles/media.scss';
+
+.sectionWrapper {
+	width: 100%;
+	display: grid;
+	place-items: center;
+	position: relative;
+	overflow-x: clip;
+	background-color: #f9fafb;
+	padding: 0;
+	background-image: radial-gradient(circle, rgba(207, 221, 248, .302) 2px, transparent 0);
+	background-size: 30px 30px;
+	background-repeat: repeat;
+	background-position: 0 0;
+	min-height: 400px;
+	display: flex;
+	align-items: center;
+
+	.section {
+		position: relative;
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&.dark {
+			color: #fff;
+			background-color: #111827;
+		}
+
+		&.light {
+			color: #111827;
+			background-color: transparent;
+		}
+	}
+
+	&.pushUp {
+		margin-top: -144px;
+
+		@media (max-width: 640px) {
+			margin-top: -128px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.section {
+		padding: 2rem 1rem;
+	}
+}
+
+@media (min-width: 768px) {
+	.section {
+		padding: 2rem 2rem;
+	}
+}
