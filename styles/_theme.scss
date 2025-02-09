@@ -110,18 +110,6 @@ $theme-map: null;
 	$theme-map: null !global;
 }
 
-// function to get proper color depending on the acive theme
-// must be used inside the theme or g_theme mixins
-// usage:
-/* file:my-section.module.scss
-
-	.section {
-		@include theme {
-			color: theme-get(my-text-color);
-		}
-	}
-
-*/
 @function theme-get($key) {
 	@return map.get($theme-map, $key);
 }
