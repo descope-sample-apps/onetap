@@ -30,11 +30,9 @@ export default function Home() {
                   <h1 className="text-[#192740] text-4xl text-center font-bold flex items-center justify-center gap-2">
                     What Is <div className="flex items-center h-[36px]"><Image src="/one_tap.svg" alt="One Tap" width={165} height={55} className="object-contain" /></div>
                   </h1>
-                  <div className="space-y-4">
-                    <h3 className="text-[#686e78] text-left text-lg font-normal">Google One Tap is a sign-in feature that allows users to log into websites or apps with just one click without remembering or entering passwords.
-                      This feature can be embedded into websites and apps, offering a seamless, fast login experience that reduces user friction. It&apos;s
-                      designed to improve user convenience and security by eliminating the need for repeated credential entry.
-                      Additionally, it helps businesses increase user sign-ups and engagement by minimizing barriers to entry.
+                  <div className="space-y-6 pb-2">
+                    <h3 className="text-[#686e78] text-center text-lg font-normal">Google One Tap is a sign-in feature that allows users to log into websites or apps with just one click without remembering or entering passwords.
+                      This feature can be embedded into websites and apps, offering a seamless, fast login experience that reduces user friction. It helps businesses increase user sign-ups and engagement by minimizing barriers to entry.
                     </h3>
                   </div>
                   <div className="flex justify-center mt-8">
