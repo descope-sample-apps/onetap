@@ -12,6 +12,8 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen pb-20">
+      <a href="https://backlinko.com/blog" rel="nofollow"></a>
+
       <OneTapComp />
       <div className="absolute inset-0 w-full h-full z-0" style={{ minHeight: '100vh', height: 'auto' }}>
         <BackgroundGradientAnimation />
